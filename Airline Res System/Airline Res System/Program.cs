@@ -32,6 +32,22 @@ namespace Airline_Res_System
                 sqlConn.Open();
             }
             // functions go here to access the SQL data, perform ops, etc... //
+            // SAMPLE FUNCTION BELOW TO SHOW THESE CALLS IN C# //
+            public string getMonsterImage(string monsterName)
+            {
+                // Function for getting the picture name / location data from the MonsterAttr table //
+                string cmdText = "SELECT Picture FROM Software_Engineering.MonsterAttr "
+                    + "WHERE Name = '" + monsterName.ToString() + "'";
+                MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
+                sqlReader = cmd.ExecuteReader(); // executes the reader
+                string monsterImage = string.Empty;
+                while (sqlReader.Read())
+                {
+                    monsterImage = sqlReader.GetString("Picture");
+                }
+                sqlReader.Close();
+                return ("./EncounterImages/" + monsterImage.ToString());
+            }
         }
     }
 }
