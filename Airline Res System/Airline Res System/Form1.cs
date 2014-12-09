@@ -45,6 +45,6 @@ namespace Airline_Res_System
             // After quote is shown, unlock the buy button //
             Form Quote = new Quote();
             Quote.Show();
-        
+        }      
     }
 }
