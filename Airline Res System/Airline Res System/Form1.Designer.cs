@@ -39,12 +39,12 @@
             this.Main_CheapBtn = new System.Windows.Forms.CheckBox();
             this.Main_BookingClLabel = new System.Windows.Forms.Label();
             this.Main_BookingCl = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Main_PassengersLbl = new System.Windows.Forms.Label();
             this.Main_BuyBtn = new System.Windows.Forms.Button();
             this.Main_ScheduleBtn = new System.Windows.Forms.Button();
             this.Main_StatusBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Main_QuoteBtn = new System.Windows.Forms.Button();
+            this.Main_Passengers = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Main_DepAirportLbl
@@ -140,30 +140,25 @@
             this.Main_BookingCl.Size = new System.Drawing.Size(28, 20);
             this.Main_BookingCl.TabIndex = 10;
             // 
-            // textBox2
+            // Main_PassengersLbl
             // 
-            this.textBox2.Location = new System.Drawing.Point(494, 146);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(367, 142);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "label7";
+            this.Main_PassengersLbl.AutoSize = true;
+            this.Main_PassengersLbl.Location = new System.Drawing.Point(367, 112);
+            this.Main_PassengersLbl.Name = "Main_PassengersLbl";
+            this.Main_PassengersLbl.Size = new System.Drawing.Size(84, 13);
+            this.Main_PassengersLbl.TabIndex = 12;
+            this.Main_PassengersLbl.Text = "# of Passengers";
             // 
             // Main_BuyBtn
             // 
+            this.Main_BuyBtn.Enabled = false;
             this.Main_BuyBtn.Location = new System.Drawing.Point(94, 102);
             this.Main_BuyBtn.Name = "Main_BuyBtn";
             this.Main_BuyBtn.Size = new System.Drawing.Size(90, 23);
             this.Main_BuyBtn.TabIndex = 13;
             this.Main_BuyBtn.Text = "Buy Ticket";
             this.Main_BuyBtn.UseVisualStyleBackColor = true;
+            this.Main_BuyBtn.Click += new System.EventHandler(this.Main_BuyBtn_Click);
             // 
             // Main_ScheduleBtn
             // 
@@ -173,6 +168,7 @@
             this.Main_ScheduleBtn.TabIndex = 14;
             this.Main_ScheduleBtn.Text = "Show Schedule";
             this.Main_ScheduleBtn.UseVisualStyleBackColor = true;
+            this.Main_ScheduleBtn.Click += new System.EventHandler(this.Main_ScheduleBtn_Click);
             // 
             // Main_StatusBtn
             // 
@@ -182,27 +178,48 @@
             this.Main_StatusBtn.TabIndex = 15;
             this.Main_StatusBtn.Text = "Flight Status";
             this.Main_StatusBtn.UseVisualStyleBackColor = true;
+            this.Main_StatusBtn.Click += new System.EventHandler(this.Main_StatusBtn_Click);
             // 
-            // button4
+            // Main_QuoteBtn
             // 
-            this.button4.Location = new System.Drawing.Point(209, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Main_QuoteBtn.Location = new System.Drawing.Point(209, 142);
+            this.Main_QuoteBtn.Name = "Main_QuoteBtn";
+            this.Main_QuoteBtn.Size = new System.Drawing.Size(75, 23);
+            this.Main_QuoteBtn.TabIndex = 16;
+            this.Main_QuoteBtn.Text = "Get Quote";
+            this.Main_QuoteBtn.UseVisualStyleBackColor = true;
+            this.Main_QuoteBtn.Click += new System.EventHandler(this.Main_QuoteBtn_Click);
+            // 
+            // Main_Passengers
+            // 
+            this.Main_Passengers.FormattingEnabled = true;
+            this.Main_Passengers.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.Main_Passengers.Location = new System.Drawing.Point(499, 112);
+            this.Main_Passengers.Name = "Main_Passengers";
+            this.Main_Passengers.Size = new System.Drawing.Size(48, 21);
+            this.Main_Passengers.TabIndex = 17;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 178);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Main_Passengers);
+            this.Controls.Add(this.Main_QuoteBtn);
             this.Controls.Add(this.Main_StatusBtn);
             this.Controls.Add(this.Main_ScheduleBtn);
             this.Controls.Add(this.Main_BuyBtn);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Main_PassengersLbl);
             this.Controls.Add(this.Main_BookingCl);
             this.Controls.Add(this.Main_BookingClLabel);
             this.Controls.Add(this.Main_CheapBtn);
@@ -234,12 +251,12 @@
         private System.Windows.Forms.CheckBox Main_CheapBtn;
         private System.Windows.Forms.Label Main_BookingClLabel;
         private System.Windows.Forms.TextBox Main_BookingCl;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label Main_PassengersLbl;
         private System.Windows.Forms.Button Main_BuyBtn;
         private System.Windows.Forms.Button Main_ScheduleBtn;
         private System.Windows.Forms.Button Main_StatusBtn;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Main_QuoteBtn;
+        private System.Windows.Forms.ComboBox Main_Passengers;
     }
 }
 
