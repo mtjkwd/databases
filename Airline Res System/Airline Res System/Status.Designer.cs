@@ -28,11 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Status_CloseBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, -1);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(527, 269);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Status_CloseBtn
+            // 
+            this.Status_CloseBtn.Location = new System.Drawing.Point(23, 274);
+            this.Status_CloseBtn.Name = "Status_CloseBtn";
+            this.Status_CloseBtn.Size = new System.Drawing.Size(75, 23);
+            this.Status_CloseBtn.TabIndex = 1;
+            this.Status_CloseBtn.Text = "Close";
+            this.Status_CloseBtn.UseVisualStyleBackColor = true;
+            this.Status_CloseBtn.Click += new System.EventHandler(this.Status_CloseBtn_Click);
+            // 
+            // Status
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(527, 299);
+            this.Controls.Add(this.Status_CloseBtn);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "Status";
             this.Text = "Status";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Status_CloseBtn;
     }
 }

@@ -16,5 +16,11 @@ namespace Airline_Res_System
         {
             InitializeComponent();
         }
+
+        private void Status_CloseBtn_Click(object sender, EventArgs e)
+        {
+            // Close the status window //
+            this.Close();
+        }
     }
 }
