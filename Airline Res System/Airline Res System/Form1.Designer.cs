@@ -232,7 +232,7 @@
             this.Controls.Add(this.Main_ArrAirportLbl);
             this.Controls.Add(this.Main_DepAirportLbl);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Airline Reservation System";
             this.ResumeLayout(false);
             this.PerformLayout();
 
