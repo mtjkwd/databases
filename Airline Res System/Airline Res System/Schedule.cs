@@ -16,28 +16,7 @@ namespace Airline_Res_System
 
         public Schedule()
         {
-            InitializeComponent();
-            DataTable grid = new DataTable();
-            grid.Columns.Add("Airline");
-            grid.Columns.Add("Flight Nr");
-            grid.Columns.Add("Departure Time");
-            grid.Columns.Add("Departure Airport");
-            grid.Columns.Add("Arrival Time");
-            grid.Columns.Add("Arrival Airport");
-
-            // Add schedule grid columns here //
-            DataRow row = grid.Rows.Add();
-            row[0] = "Ryanair";
-            row[1] = "00001";
-            row[2] = "TODAY";
-            row[3] = "STL";
-            row[4] = "CRASH";
-            row[5] = "MCI";
-            row.AcceptChanges();
-
-            Schedule_Grid.DataSource = grid;
-            
-            
+            InitializeComponent(); 
         }
 
         private void Schedule_Grid_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -34,6 +34,46 @@ namespace Airline_Res_System
         {
             // Open schedule form //
             Form Schedule = new Schedule();
+            Control[] Schedule_GridControl = Schedule.Controls.Find("Schedule_Grid", true);
+            DataGridView Schedule_Grid = (DataGridView)Schedule_GridControl[0];
+
+            // Call a validation function here to check FROM 1 input //
+
+            // Create a data table to populate returned sql data //
+            DataTable scheduleTable = new DataTable();
+            scheduleTable.Columns.Add("Airline");
+            scheduleTable.Columns.Add("Flight Number");
+            scheduleTable.Columns.Add("Departure Airport");
+            scheduleTable.Columns.Add("Departure Time");
+            scheduleTable.Columns.Add("Arrival Airport");
+            scheduleTable.Columns.Add("Arrival Time");
+            scheduleTable.Columns.Add("Total Seats");
+
+            // Get the data from SQL //
+            MYSQLConn connection = new MYSQLConn();
+            List<Flight> flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
+            string test = this.Main_DateTime.Value.ToString("yyyy-MM-dd");
+            
+            if (flights.Count == 0)
+            {
+                MessageBox.Show("No Flights Found");
+                return;
+            }
+            foreach (Flight flight in flights)
+            {
+                // Add the data into the DataTable //
+                DataRow temp = scheduleTable.Rows.Add();
+                temp[0] = flight.airline.ToString();
+                temp[1] = flight.flightNum.ToString();
+                temp[2] = flight.depAirport.ToString();
+                temp[3] = flight.depTime.ToString();
+                temp[4] = flight.arrAirport.ToString();
+                temp[5] = flight.arrTime.ToString();
+                temp[6] = flight.maxSeats.ToString();
+                temp.AcceptChanges();
+            }
+
+            Schedule_Grid.DataSource = scheduleTable;
             Schedule.Show();
         }
 
@@ -49,12 +89,26 @@ namespace Airline_Res_System
         {
             // Run main screen validation, then show status of flight if found, error if not //
             Form Status = new Status();
-            Control statusGridControl = Status.Controls.Find("Status_Grid");
-            DataGridView statusGrid = (DataGridView)statusGridControl;
+            Control[] statusGridControl = Status.Controls.Find("Status_Grid", true);
+            DataGridView statusGrid = (DataGridView)statusGridControl[0];
+
+            // Call a validation function here to check FORM 1 input //
 
             // Create data table to populate the grid, from sql data returned //
+            DataTable statusTable = new DataTable();
+            statusTable.Columns.Add("Airline");
+            statusTable.Columns.Add("Flight Number");
+            statusTable.Columns.Add("Flight Status");
+            statusTable.Columns.Add("Departure Airport");
+            statusTable.Columns.Add("Departure Time");
+            statusTable.Columns.Add("Arrival Airport");
+            statusTable.Columns.Add("Arrival Time");
 
 
+
+
+            statusTable.AcceptChanges();
+            statusGrid.DataSource = statusTable;
             Status.Show();
         }
 

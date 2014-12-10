@@ -38,12 +38,12 @@
             this.Status_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Status_Grid.Location = new System.Drawing.Point(0, -1);
             this.Status_Grid.Name = "Status_Grid";
-            this.Status_Grid.Size = new System.Drawing.Size(527, 269);
+            this.Status_Grid.Size = new System.Drawing.Size(748, 382);
             this.Status_Grid.TabIndex = 0;
             // 
             // Status_CloseBtn
             // 
-            this.Status_CloseBtn.Location = new System.Drawing.Point(23, 274);
+            this.Status_CloseBtn.Location = new System.Drawing.Point(12, 387);
             this.Status_CloseBtn.Name = "Status_CloseBtn";
             this.Status_CloseBtn.Size = new System.Drawing.Size(75, 23);
             this.Status_CloseBtn.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 299);
+            this.ClientSize = new System.Drawing.Size(747, 413);
             this.Controls.Add(this.Status_CloseBtn);
             this.Controls.Add(this.Status_Grid);
             this.Name = "Status";
