@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Airline_Res_System
 {
     public partial class Form1 : Form
@@ -15,6 +16,18 @@ namespace Airline_Res_System
         public Form1()
         {
             InitializeComponent();
+            MYSQLConn connection = new MYSQLConn();
+            // Initialize field values //
+            // Setup detailed values for airport source /destination //
+            List<Airport> airports = connection.getAirports();
+            foreach (Airport airport in airports)
+            {
+                Main_DepAirport.Items.Add(airport.name.ToString());
+                Main_ArrAirport.Items.Add(airport.name.ToString());
+            }
+            // Set Main_DateTime field to current date //
+            Main_DateTime.Value = System.DateTime.Now; // uses local time zone for user //
+            Main_DateTime.MinDate = System.DateTime.Now; // only future reservations accepted //
         }
 
         private void Main_ScheduleBtn_Click(object sender, EventArgs e)
@@ -36,6 +49,12 @@ namespace Airline_Res_System
         {
             // Run main screen validation, then show status of flight if found, error if not //
             Form Status = new Status();
+            Control statusGridControl = Status.Controls.Find("Status_Grid");
+            DataGridView statusGrid = (DataGridView)statusGridControl;
+
+            // Create data table to populate the grid, from sql data returned //
+
+
             Status.Show();
         }
 

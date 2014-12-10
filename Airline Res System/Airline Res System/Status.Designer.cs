@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Status_Grid = new System.Windows.Forms.DataGridView();
             this.Status_CloseBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Status_Grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Status_Grid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, -1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(527, 269);
-            this.dataGridView1.TabIndex = 0;
+            this.Status_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Status_Grid.Location = new System.Drawing.Point(0, -1);
+            this.Status_Grid.Name = "Status_Grid";
+            this.Status_Grid.Size = new System.Drawing.Size(527, 269);
+            this.Status_Grid.TabIndex = 0;
             // 
             // Status_CloseBtn
             // 
@@ -57,17 +57,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 299);
             this.Controls.Add(this.Status_CloseBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Status_Grid);
             this.Name = "Status";
             this.Text = "Status";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Status_Grid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Status_Grid;
         private System.Windows.Forms.Button Status_CloseBtn;
     }
 }

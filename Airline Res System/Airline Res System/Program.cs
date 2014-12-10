@@ -20,7 +20,7 @@ namespace Airline_Res_System
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-
+    }
         class Airport
         {
             public string name;
@@ -224,7 +224,7 @@ namespace Airline_Res_System
                 {
                     flight = new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
                         sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
-                        sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
+                        sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport"));
                 }
                 sqlReader.Close();
                 return flight;
@@ -268,6 +268,5 @@ namespace Airline_Res_System
                 return;
             }
 
-        }
     }
 }
