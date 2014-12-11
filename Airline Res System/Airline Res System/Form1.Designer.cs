@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Main_DepAirportLbl = new System.Windows.Forms.Label();
             this.Main_ArrAirportLbl = new System.Windows.Forms.Label();
             this.Main_DepAirport = new System.Windows.Forms.ComboBox();
@@ -40,11 +41,11 @@
             this.Main_BookingClLabel = new System.Windows.Forms.Label();
             this.Main_BookingCl = new System.Windows.Forms.TextBox();
             this.Main_PassengersLbl = new System.Windows.Forms.Label();
-            this.Main_BuyBtn = new System.Windows.Forms.Button();
             this.Main_ScheduleBtn = new System.Windows.Forms.Button();
             this.Main_StatusBtn = new System.Windows.Forms.Button();
             this.Main_QuoteBtn = new System.Windows.Forms.Button();
             this.Main_Passengers = new System.Windows.Forms.ComboBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // Main_DepAirportLbl
@@ -149,17 +150,6 @@
             this.Main_PassengersLbl.TabIndex = 12;
             this.Main_PassengersLbl.Text = "# of Passengers";
             // 
-            // Main_BuyBtn
-            // 
-            this.Main_BuyBtn.Enabled = false;
-            this.Main_BuyBtn.Location = new System.Drawing.Point(94, 102);
-            this.Main_BuyBtn.Name = "Main_BuyBtn";
-            this.Main_BuyBtn.Size = new System.Drawing.Size(90, 23);
-            this.Main_BuyBtn.TabIndex = 13;
-            this.Main_BuyBtn.Text = "Buy Ticket";
-            this.Main_BuyBtn.UseVisualStyleBackColor = true;
-            this.Main_BuyBtn.Click += new System.EventHandler(this.Main_BuyBtn_Click);
-            // 
             // Main_ScheduleBtn
             // 
             this.Main_ScheduleBtn.Location = new System.Drawing.Point(209, 102);
@@ -209,6 +199,16 @@
             this.Main_Passengers.Size = new System.Drawing.Size(48, 21);
             this.Main_Passengers.TabIndex = 17;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,7 +218,6 @@
             this.Controls.Add(this.Main_QuoteBtn);
             this.Controls.Add(this.Main_StatusBtn);
             this.Controls.Add(this.Main_ScheduleBtn);
-            this.Controls.Add(this.Main_BuyBtn);
             this.Controls.Add(this.Main_PassengersLbl);
             this.Controls.Add(this.Main_BookingCl);
             this.Controls.Add(this.Main_BookingClLabel);
@@ -252,11 +251,11 @@
         private System.Windows.Forms.Label Main_BookingClLabel;
         private System.Windows.Forms.TextBox Main_BookingCl;
         private System.Windows.Forms.Label Main_PassengersLbl;
-        private System.Windows.Forms.Button Main_BuyBtn;
         private System.Windows.Forms.Button Main_ScheduleBtn;
         private System.Windows.Forms.Button Main_StatusBtn;
         private System.Windows.Forms.Button Main_QuoteBtn;
         private System.Windows.Forms.ComboBox Main_Passengers;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 

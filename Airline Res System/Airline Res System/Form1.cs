@@ -36,6 +36,7 @@ namespace Airline_Res_System
             Form Schedule = new Schedule();
             Control[] Schedule_GridControl = Schedule.Controls.Find("Schedule_Grid", true);
             DataGridView Schedule_Grid = (DataGridView)Schedule_GridControl[0];
+            Schedule_Grid.ReadOnly = true;
 
             // Call a validation function here to check FROM 1 input //
 
@@ -74,6 +75,21 @@ namespace Airline_Res_System
             }
 
             Schedule_Grid.DataSource = scheduleTable;
+
+            // Show values from From1 control //
+            Control[] CheapestControl = Schedule.Controls.Find("Schedule_Cheapest", true);
+            Control[] ClassControl = Schedule.Controls.Find("Schedule_BookingClass", true);
+            Control[] PassengersControl = Schedule.Controls.Find("Schedule_NumPass", true);
+            
+            // Load controls, put values into them from parent form //
+            CheckBox Cheapest = (CheckBox)CheapestControl[0];
+            TextBox Class = (TextBox)ClassControl[0];
+            ComboBox Passengers = (ComboBox)PassengersControl[0];
+
+            Cheapest.Checked = this.Main_CheapBtn.Checked;
+            Class.Text = this.Main_BookingCl.Text;
+            Passengers.SelectedIndex = this.Main_Passengers.SelectedIndex;
+
             Schedule.Show();
         }
 
