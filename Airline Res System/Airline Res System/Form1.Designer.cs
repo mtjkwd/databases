@@ -39,12 +39,12 @@
             this.Main_CheapBtnLbl = new System.Windows.Forms.Label();
             this.Main_CheapBtn = new System.Windows.Forms.CheckBox();
             this.Main_BookingClLabel = new System.Windows.Forms.Label();
-            this.Main_BookingCl = new System.Windows.Forms.TextBox();
             this.Main_PassengersLbl = new System.Windows.Forms.Label();
             this.Main_ScheduleBtn = new System.Windows.Forms.Button();
             this.Main_StatusBtn = new System.Windows.Forms.Button();
             this.Main_Passengers = new System.Windows.Forms.ComboBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.Main_BookingCl = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Main_DepAirportLbl
@@ -133,13 +133,6 @@
             this.Main_BookingClLabel.TabIndex = 9;
             this.Main_BookingClLabel.Text = "Booking Class (optional)";
             // 
-            // Main_BookingCl
-            // 
-            this.Main_BookingCl.Location = new System.Drawing.Point(519, 76);
-            this.Main_BookingCl.Name = "Main_BookingCl";
-            this.Main_BookingCl.Size = new System.Drawing.Size(28, 20);
-            this.Main_BookingCl.TabIndex = 10;
-            // 
             // Main_PassengersLbl
             // 
             this.Main_PassengersLbl.AutoSize = true;
@@ -198,16 +191,31 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // Main_BookingCl
+            // 
+            this.Main_BookingCl.FormattingEnabled = true;
+            this.Main_BookingCl.Items.AddRange(new object[] {
+            "F",
+            "G",
+            "H",
+            "I",
+            "K",
+            "Y"});
+            this.Main_BookingCl.Location = new System.Drawing.Point(499, 74);
+            this.Main_BookingCl.Name = "Main_BookingCl";
+            this.Main_BookingCl.Size = new System.Drawing.Size(48, 21);
+            this.Main_BookingCl.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 146);
+            this.Controls.Add(this.Main_BookingCl);
             this.Controls.Add(this.Main_Passengers);
             this.Controls.Add(this.Main_StatusBtn);
             this.Controls.Add(this.Main_ScheduleBtn);
             this.Controls.Add(this.Main_PassengersLbl);
-            this.Controls.Add(this.Main_BookingCl);
             this.Controls.Add(this.Main_BookingClLabel);
             this.Controls.Add(this.Main_CheapBtn);
             this.Controls.Add(this.Main_CheapBtnLbl);
@@ -237,12 +245,12 @@
         private System.Windows.Forms.Label Main_CheapBtnLbl;
         private System.Windows.Forms.CheckBox Main_CheapBtn;
         private System.Windows.Forms.Label Main_BookingClLabel;
-        private System.Windows.Forms.TextBox Main_BookingCl;
         private System.Windows.Forms.Label Main_PassengersLbl;
         private System.Windows.Forms.Button Main_ScheduleBtn;
         private System.Windows.Forms.Button Main_StatusBtn;
         private System.Windows.Forms.ComboBox Main_Passengers;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.ComboBox Main_BookingCl;
     }
 }
 

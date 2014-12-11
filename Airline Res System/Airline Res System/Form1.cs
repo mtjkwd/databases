@@ -103,11 +103,11 @@ namespace Airline_Res_System
             
             // Load controls, put values into them from parent form //
             CheckBox Cheapest = (CheckBox)CheapestControl[0];
-            TextBox Class = (TextBox)ClassControl[0];
+            ComboBox Class = (ComboBox)ClassControl[0];
             ComboBox Passengers = (ComboBox)PassengersControl[0];
 
             Cheapest.Checked = this.Main_CheapBtn.Checked;
-            Class.Text = this.Main_BookingCl.Text;
+            Class.SelectedIndex = this.Main_BookingCl.SelectedIndex;
             Passengers.SelectedIndex = this.Main_Passengers.SelectedIndex;
 
             Schedule.Show();

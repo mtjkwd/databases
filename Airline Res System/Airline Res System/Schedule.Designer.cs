@@ -34,7 +34,6 @@
             this.Schedule_CheapestLbl = new System.Windows.Forms.Label();
             this.Schedule_BookingClassLbl = new System.Windows.Forms.Label();
             this.Schedule_NumPassLbl = new System.Windows.Forms.Label();
-            this.Schedule_BookingClass = new System.Windows.Forms.TextBox();
             this.Schedule_NumPass = new System.Windows.Forms.ComboBox();
             this.Schedule_Cheapest = new System.Windows.Forms.CheckBox();
             this.Schedule_PassEmailLbl = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.Schedule_PassEmail = new System.Windows.Forms.TextBox();
             this.Schedule_Fname = new System.Windows.Forms.TextBox();
             this.Schedule_Lname = new System.Windows.Forms.TextBox();
+            this.Schedule_BookingClass = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Schedule_Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,14 +102,6 @@
             this.Schedule_NumPassLbl.Size = new System.Drawing.Size(84, 13);
             this.Schedule_NumPassLbl.TabIndex = 5;
             this.Schedule_NumPassLbl.Text = "# of Passengers";
-            // 
-            // Schedule_BookingClass
-            // 
-            this.Schedule_BookingClass.Enabled = false;
-            this.Schedule_BookingClass.Location = new System.Drawing.Point(864, 112);
-            this.Schedule_BookingClass.Name = "Schedule_BookingClass";
-            this.Schedule_BookingClass.Size = new System.Drawing.Size(100, 20);
-            this.Schedule_BookingClass.TabIndex = 7;
             // 
             // Schedule_NumPass
             // 
@@ -192,11 +184,28 @@
             this.Schedule_Lname.Size = new System.Drawing.Size(100, 20);
             this.Schedule_Lname.TabIndex = 15;
             // 
+            // Schedule_BookingClass
+            // 
+            this.Schedule_BookingClass.Enabled = false;
+            this.Schedule_BookingClass.FormattingEnabled = true;
+            this.Schedule_BookingClass.Items.AddRange(new object[] {
+            "F",
+            "G",
+            "H",
+            "I",
+            "K",
+            "Y"});
+            this.Schedule_BookingClass.Location = new System.Drawing.Point(864, 104);
+            this.Schedule_BookingClass.Name = "Schedule_BookingClass";
+            this.Schedule_BookingClass.Size = new System.Drawing.Size(100, 21);
+            this.Schedule_BookingClass.TabIndex = 16;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 450);
+            this.Controls.Add(this.Schedule_BookingClass);
             this.Controls.Add(this.Schedule_Lname);
             this.Controls.Add(this.Schedule_Fname);
             this.Controls.Add(this.Schedule_PassEmail);
@@ -205,7 +214,6 @@
             this.Controls.Add(this.Schedule_PassEmailLbl);
             this.Controls.Add(this.Schedule_Cheapest);
             this.Controls.Add(this.Schedule_NumPass);
-            this.Controls.Add(this.Schedule_BookingClass);
             this.Controls.Add(this.Schedule_NumPassLbl);
             this.Controls.Add(this.Schedule_BookingClassLbl);
             this.Controls.Add(this.Schedule_CheapestLbl);
@@ -228,7 +236,6 @@
         private System.Windows.Forms.Label Schedule_CheapestLbl;
         private System.Windows.Forms.Label Schedule_BookingClassLbl;
         private System.Windows.Forms.Label Schedule_NumPassLbl;
-        private System.Windows.Forms.TextBox Schedule_BookingClass;
         private System.Windows.Forms.ComboBox Schedule_NumPass;
         private System.Windows.Forms.CheckBox Schedule_Cheapest;
         private System.Windows.Forms.Label Schedule_PassEmailLbl;
@@ -237,5 +244,6 @@
         private System.Windows.Forms.TextBox Schedule_PassEmail;
         private System.Windows.Forms.TextBox Schedule_Fname;
         private System.Windows.Forms.TextBox Schedule_Lname;
+        private System.Windows.Forms.ComboBox Schedule_BookingClass;
     }
 }
