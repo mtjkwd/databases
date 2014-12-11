@@ -341,5 +341,14 @@ namespace Airline_Res_System
             return;
         }
 
+        public void deleteFlight(int flightNum)
+        {
+            // Function for deleting a ticket from the database //
+            string cmdText = "DELETE FROM flight WHERE `Flight Nr` = " + flightNum + ";";
+            MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
+            cmd.ExecuteNonQuery();
+            return;
+        }
+
     }
 }
