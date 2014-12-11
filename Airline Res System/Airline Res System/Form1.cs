@@ -53,20 +53,20 @@ namespace Airline_Res_System
             List<Flight> flights;
             // Get the data from SQL //
             MYSQLConn connection = new MYSQLConn();
-            if (this.Main_DepAirport.Text.ToString() == String.Empty && this.Main_ArrAirport.Text.ToString() == String.Empty)
+            if (this.Main_DepAirport.Text.ToString() != String.Empty && this.Main_ArrAirport.Text.ToString() != String.Empty)
             {
                 //flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
-                flights = connection.getFlightsBothAirports(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.ToString(), this.Main_ArrAirport.ToString());
+                flights = connection.getFlightsBothAirports(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.Text.ToString(), this.Main_ArrAirport.Text.ToString());
             }
-            else if (this.Main_DepAirport.Text.ToString() == String.Empty)
+            else if (this.Main_DepAirport.Text.ToString() != String.Empty)
             {
                 // Get arrival airport info //
-                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_ArrAirport.ToString());
+                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_ArrAirport.Text.ToString());
             }
-            else if (this.Main_ArrAirport.Text.ToString() == String.Empty)
+            else if (this.Main_ArrAirport.Text.ToString() != String.Empty)
             {
                 // Only get departure airport flights on the spec. date
-                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.ToString());
+                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.Text.ToString());
             }
             else
             {
