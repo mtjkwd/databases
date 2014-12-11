@@ -50,10 +50,30 @@ namespace Airline_Res_System
             scheduleTable.Columns.Add("Arrival Time");
             scheduleTable.Columns.Add("Total Seats");
 
+            List<Flight> flights;
             // Get the data from SQL //
             MYSQLConn connection = new MYSQLConn();
-            List<Flight> flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
-            string test = this.Main_DateTime.Value.ToString("yyyy-MM-dd");
+            if (this.Main_DepAirport.Text.ToString() == String.Empty && this.Main_ArrAirport.Text.ToString() == String.Empty)
+            {
+                //flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
+                flights = connection.getFlightsBothAirports(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.ToString(), this.Main_ArrAirport.ToString());
+            }
+            else if (this.Main_DepAirport.Text.ToString() == String.Empty)
+            {
+                // Get arrival airport info //
+                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_ArrAirport.ToString());
+            }
+            else if (this.Main_ArrAirport.Text.ToString() == String.Empty)
+            {
+                // Only get departure airport flights on the spec. date
+                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.ToString());
+            }
+            else
+            {
+                // Gets flights at both airports
+                flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
+            }
+            
             
             if (flights.Count == 0)
             {

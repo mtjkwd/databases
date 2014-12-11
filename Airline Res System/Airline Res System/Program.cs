@@ -199,7 +199,7 @@ namespace Airline_Res_System
         {
             // Function for getting all flights for a date from the database //
             List<Flight> Flights = new List<Flight>();
-            string cmdText = "SELECT * FROM flight WHERE Dep_Date = '" + date + "' AND Dep_Airport = '" + dep_airport + "' AND Arr_Aiport = '" + arr_aiport + "';";
+            string cmdText = "SELECT * FROM flight WHERE Dep_Date = '" + date + "' AND Dep_Airport = '" + dep_airport + "' AND Arr_Aiport = '" + arr_airport + "';";
             MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
             sqlReader = cmd.ExecuteReader();
             while (sqlReader.Read())
