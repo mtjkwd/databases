@@ -43,6 +43,7 @@
             this.Schedule_Fname = new System.Windows.Forms.TextBox();
             this.Schedule_Lname = new System.Windows.Forms.TextBox();
             this.Schedule_BookingClass = new System.Windows.Forms.ComboBox();
+            this.Schedule_DeleteFlight = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Schedule_Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,11 +201,23 @@
             this.Schedule_BookingClass.Size = new System.Drawing.Size(100, 21);
             this.Schedule_BookingClass.TabIndex = 16;
             // 
+            // Schedule_DeleteFlight
+            // 
+            this.Schedule_DeleteFlight.Enabled = false;
+            this.Schedule_DeleteFlight.Location = new System.Drawing.Point(785, 415);
+            this.Schedule_DeleteFlight.Name = "Schedule_DeleteFlight";
+            this.Schedule_DeleteFlight.Size = new System.Drawing.Size(117, 23);
+            this.Schedule_DeleteFlight.TabIndex = 17;
+            this.Schedule_DeleteFlight.Text = "Delete Flight (Admin)";
+            this.Schedule_DeleteFlight.UseVisualStyleBackColor = true;
+            this.Schedule_DeleteFlight.Click += new System.EventHandler(this.Schedule_DeleteFlight_Click);
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 450);
+            this.Controls.Add(this.Schedule_DeleteFlight);
             this.Controls.Add(this.Schedule_BookingClass);
             this.Controls.Add(this.Schedule_Lname);
             this.Controls.Add(this.Schedule_Fname);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.TextBox Schedule_Fname;
         private System.Windows.Forms.TextBox Schedule_Lname;
         private System.Windows.Forms.ComboBox Schedule_BookingClass;
+        private System.Windows.Forms.Button Schedule_DeleteFlight;
     }
 }

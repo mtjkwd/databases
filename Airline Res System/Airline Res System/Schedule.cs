@@ -32,6 +32,7 @@ namespace Airline_Res_System
             Schedule_Fname.Enabled = true;
             Schedule_Lname.Enabled = true;
             Schedule_Cheapest.Enabled = true;
+            Schedule_DeleteFlight.Enabled = true;
         }
 
         private void Schedule_Close_Click(object sender, EventArgs e)
@@ -72,6 +73,7 @@ namespace Airline_Res_System
                 MYSQLConn connection = new MYSQLConn();
                 int ticketNr = connection.getNewTicketNum(Convert.ToInt32(flightNr));
                 connection.purchaseTicket(ticketNr, email, Convert.ToInt32(flightNr), ticketNr, fareClass, airline);
+                connection.addPassenger(email, fname, lname);
                 MessageBox.Show("Booking Complete!");
                 
             }
@@ -87,6 +89,17 @@ namespace Airline_Res_System
             }
             
 
+        }
+
+        private void Schedule_DeleteFlight_Click(object sender, EventArgs e)
+        {
+            // Will perform a cascade delete, removing flight data and all associated tickets.. whops! //
+            MYSQLConn connection = new MYSQLConn();
+            Control[] Schedule_GridControl = this.Controls.Find("Schedule_Grid", true);
+            DataGridView Schedule_Grid = (DataGridView)Schedule_GridControl[0];
+            connection.deleteFlight(Convert.ToInt32(Schedule_Grid.Rows[selectedRowIndex].Cells[1].Value));
+            MessageBox.Show("Flight Deleted!");
+            this.Close();
         }
     }
 }
