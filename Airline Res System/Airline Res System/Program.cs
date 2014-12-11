@@ -172,7 +172,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"), 
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"), 
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"), 
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
             }
             sqlReader.Close();
@@ -189,7 +189,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
             }
             sqlReader.Close();
@@ -205,7 +205,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
             }
             sqlReader.Close();
@@ -221,7 +221,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
             }
             sqlReader.Close();
@@ -237,7 +237,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
             }
             sqlReader.Close();
@@ -254,7 +254,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
             }
             sqlReader.Close();
@@ -271,7 +271,7 @@ namespace Airline_Res_System
             while (sqlReader.Read())
             {
                 flight = new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
-                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Time"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
                     sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport"));
             }
             sqlReader.Close();
