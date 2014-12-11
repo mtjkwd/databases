@@ -195,6 +195,54 @@ namespace Airline_Res_System
             sqlReader.Close();
             return Flights;
         }
+        public List<Flight> getFlightsBothAirports(string date, string dep_airport, string arr_airport)
+        {
+            // Function for getting all flights for a date from the database //
+            List<Flight> Flights = new List<Flight>();
+            string cmdText = "SELECT * FROM flight WHERE Dep_Date = '" + date + "' AND Dep_Airport = '" + dep_airport + "' AND Arr_Aiport = '" + arr_aiport + "';";
+            MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
+            sqlReader = cmd.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
+            }
+            sqlReader.Close();
+            return Flights;
+        }
+        public List<Flight> getFlightsDepAirport(string date, string dep_airport)
+        {
+            // Function for getting all flights for a date from the database //
+            List<Flight> Flights = new List<Flight>();
+            string cmdText = "SELECT * FROM flight WHERE Dep_Date = '" + date + "' AND Dep_Aiport = '" + dep_airport + "';";
+            MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
+            sqlReader = cmd.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
+            }
+            sqlReader.Close();
+            return Flights;
+        }
+        public List<Flight> getFlightsArrAiport(string date, string arr_airport)
+        {
+            // Function for getting all flights for a date from the database //
+            List<Flight> Flights = new List<Flight>();
+            string cmdText = "SELECT * FROM flight WHERE Dep_Date = '" + date + "' AND Arr_Aiport = '" + arr_airport + "';";
+            MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
+            sqlReader = cmd.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                Flights.Add(new Flight(sqlReader.GetInt32("Flight Nr"), sqlReader.GetString("Airline"), sqlReader.GetInt32("Max Seats"), sqlReader.GetString("Status"),
+                    sqlReader.GetString("Arr_Date"), sqlReader.GetString("Arr_Date"), sqlReader.GetString("Dep_Date"), sqlReader.GetString("Dep_Time"),
+                    sqlReader.GetString("Dep_Airport"), sqlReader.GetString("Arr_Airport")));
+            }
+            sqlReader.Close();
+            return Flights;
+        }
 
         public List<Flight> getFlightsAfterDate(string date)
         {
