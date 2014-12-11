@@ -61,9 +61,17 @@ namespace Airline_Res_System
                 string depTime = Schedule_Grid.Rows[selectedRowIndex].Cells[3].Value.ToString();
                 string arrAir = Schedule_Grid.Rows[selectedRowIndex].Cells[4].Value.ToString();
                 string arrTime = Schedule_Grid.Rows[selectedRowIndex].Cells[5].Value.ToString();
+                string email = this.Schedule_PassEmail.Text.ToString();
+                string fname = this.Schedule_Fname.Text.ToString();
+                string lname = this.Schedule_Lname.Text.ToString();
+                string fareClass = this.Schedule_BookingClass.Text.ToString();
+                
 
                 // Write items out to the SQL table, then display success message //
-
+                MYSQLConn connection = new MYSQLConn();
+                int ticketNr = connection.getNewTicketNum(Convert.ToInt32(flightNr));
+                connection.purchaseTicket(ticketNr, email, Convert.ToInt32(flightNr), ticketNr, fareClass, airline);
+                MessageBox.Show("Booking Complete!");
                 
             }
             catch (NullReferenceException)

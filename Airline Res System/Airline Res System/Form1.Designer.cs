@@ -43,7 +43,6 @@
             this.Main_PassengersLbl = new System.Windows.Forms.Label();
             this.Main_ScheduleBtn = new System.Windows.Forms.Button();
             this.Main_StatusBtn = new System.Windows.Forms.Button();
-            this.Main_QuoteBtn = new System.Windows.Forms.Button();
             this.Main_Passengers = new System.Windows.Forms.ComboBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
@@ -85,7 +84,7 @@
             // Main_ProgFuncLbl
             // 
             this.Main_ProgFuncLbl.AutoSize = true;
-            this.Main_ProgFuncLbl.Location = new System.Drawing.Point(28, 129);
+            this.Main_ProgFuncLbl.Location = new System.Drawing.Point(28, 101);
             this.Main_ProgFuncLbl.Name = "Main_ProgFuncLbl";
             this.Main_ProgFuncLbl.Size = new System.Drawing.Size(51, 13);
             this.Main_ProgFuncLbl.TabIndex = 4;
@@ -152,7 +151,7 @@
             // 
             // Main_ScheduleBtn
             // 
-            this.Main_ScheduleBtn.Location = new System.Drawing.Point(209, 102);
+            this.Main_ScheduleBtn.Location = new System.Drawing.Point(218, 102);
             this.Main_ScheduleBtn.Name = "Main_ScheduleBtn";
             this.Main_ScheduleBtn.Size = new System.Drawing.Size(101, 23);
             this.Main_ScheduleBtn.TabIndex = 14;
@@ -162,23 +161,13 @@
             // 
             // Main_StatusBtn
             // 
-            this.Main_StatusBtn.Location = new System.Drawing.Point(94, 142);
+            this.Main_StatusBtn.Location = new System.Drawing.Point(121, 101);
             this.Main_StatusBtn.Name = "Main_StatusBtn";
             this.Main_StatusBtn.Size = new System.Drawing.Size(75, 23);
             this.Main_StatusBtn.TabIndex = 15;
             this.Main_StatusBtn.Text = "Flight Status";
             this.Main_StatusBtn.UseVisualStyleBackColor = true;
             this.Main_StatusBtn.Click += new System.EventHandler(this.Main_StatusBtn_Click);
-            // 
-            // Main_QuoteBtn
-            // 
-            this.Main_QuoteBtn.Location = new System.Drawing.Point(209, 142);
-            this.Main_QuoteBtn.Name = "Main_QuoteBtn";
-            this.Main_QuoteBtn.Size = new System.Drawing.Size(75, 23);
-            this.Main_QuoteBtn.TabIndex = 16;
-            this.Main_QuoteBtn.Text = "Get Quote";
-            this.Main_QuoteBtn.UseVisualStyleBackColor = true;
-            this.Main_QuoteBtn.Click += new System.EventHandler(this.Main_QuoteBtn_Click);
             // 
             // Main_Passengers
             // 
@@ -213,9 +202,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 178);
+            this.ClientSize = new System.Drawing.Size(657, 146);
             this.Controls.Add(this.Main_Passengers);
-            this.Controls.Add(this.Main_QuoteBtn);
             this.Controls.Add(this.Main_StatusBtn);
             this.Controls.Add(this.Main_ScheduleBtn);
             this.Controls.Add(this.Main_PassengersLbl);
@@ -253,7 +241,6 @@
         private System.Windows.Forms.Label Main_PassengersLbl;
         private System.Windows.Forms.Button Main_ScheduleBtn;
         private System.Windows.Forms.Button Main_StatusBtn;
-        private System.Windows.Forms.Button Main_QuoteBtn;
         private System.Windows.Forms.ComboBox Main_Passengers;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
