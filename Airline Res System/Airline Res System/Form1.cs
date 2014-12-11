@@ -61,12 +61,12 @@ namespace Airline_Res_System
             else if (this.Main_DepAirport.Text.ToString() != String.Empty)
             {
                 // Get arrival airport info //
-                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_ArrAirport.Text.ToString());
+                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.Text.ToString());
             }
             else if (this.Main_ArrAirport.Text.ToString() != String.Empty)
             {
                 // Only get departure airport flights on the spec. date
-                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.Text.ToString());
+                flights = connection.getFlightsArrAiport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_ArrAirport.Text.ToString());
             }
             else
             {
