@@ -298,12 +298,15 @@ namespace Airline_Res_System
         {
             //Function to get the last ticket number (and seat number) from the database //
             int ticketNum = 1;
-            string cmdText = "select * from ticket where `Flight Nr` = " + flightNum + " ORDER BY `Ticket Nr` DESC LIMIT 1;";
+            string cmdText = "select MAX(`Ticket Nr`) from ticket where `Flight Nr` = " + flightNum + ";";
             MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
             sqlReader = cmd.ExecuteReader();
             while (sqlReader.Read())
             {
-                ticketNum = sqlReader.GetInt32("Ticket Nr") + 1;
+                try {
+                    ticketNum = sqlReader.GetInt32("MAX(`Ticket Nr`)") + 1;
+                } catch {
+                }
             }
             sqlReader.Close();
             return ticketNum;
@@ -312,7 +315,6 @@ namespace Airline_Res_System
         public void addPassenger(string email, string fname, string lname)
         {
             // Function for adding a Passenger to the database, will ignore duplicate emails automatically //
-            List<Flight> Flights = new List<Flight>();
             string cmdText = "INSERT IGNORE INTO passenger (Email, Fname, Lname) VALUES ('" + email + "', '" +
                 fname + "', '" + lname + "');";
             MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
@@ -323,9 +325,17 @@ namespace Airline_Res_System
         public void purchaseTicket(int ticketNum, string email, int flightNum, int seatNum, string fareClass, string airline)
         {
             // Function for purchasing a ticket and logging it in the database //
-            List<Flight> Flights = new List<Flight>();
             string cmdText = "INSERT INTO ticket VALUES ('" + ticketNum + "', '" +
                 email + "', '" + flightNum + "', '" + seatNum + "', '" + fareClass + "', '" + airline + "');";
+            MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
+            cmd.ExecuteNonQuery();
+            return;
+        }
+
+        public void deleteTicket(int ticketNum, string email, int flightNum)
+        {
+            // Function for deleting a ticket from the database //
+            string cmdText = "DELETE FROM ticket WHERE `Ticket Nr` = " + ticketNum + " AND `Passenger Email` = '" + email + "' AND `Flight Nr` = " + flightNum + ";";
             MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
             cmd.ExecuteNonQuery();
             return;
