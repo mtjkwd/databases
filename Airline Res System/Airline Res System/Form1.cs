@@ -140,7 +140,49 @@ namespace Airline_Res_System
             statusTable.Columns.Add("Arrival Airport");
             statusTable.Columns.Add("Arrival Time");
 
+            List<Flight> flights;
+            // Get the data from SQL //
+            MYSQLConn connection = new MYSQLConn();
+            if (this.Main_DepAirport.Text.ToString() != String.Empty && this.Main_ArrAirport.Text.ToString() != String.Empty)
+            {
+                //flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
+                flights = connection.getFlightsBothAirports(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.Text.ToString(), this.Main_ArrAirport.Text.ToString());
+            }
+            else if (this.Main_DepAirport.Text.ToString() != String.Empty)
+            {
+                // Get arrival airport info //
+                flights = connection.getFlightsDepAirport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_DepAirport.Text.ToString());
+            }
+            else if (this.Main_ArrAirport.Text.ToString() != String.Empty)
+            {
+                // Only get departure airport flights on the spec. date
+                flights = connection.getFlightsArrAiport(this.Main_DateTime.Value.ToString("yyyy-MM-dd"), this.Main_ArrAirport.Text.ToString());
+            }
+            else
+            {
+                // Gets flights at both airports
+                flights = connection.getFlights(this.Main_DateTime.Value.ToString("yyyy-MM-dd"));
+            }
 
+
+            if (flights.Count == 0)
+            {
+                MessageBox.Show("No Flights Found");
+                return;
+            }
+            foreach (Flight flight in flights)
+            {
+                // Add the data into the DataTable //
+                DataRow temp = statusTable.Rows.Add();
+                temp[0] = flight.airline.ToString();
+                temp[1] = flight.flightNum.ToString();
+                temp[2] = flight.status.ToString();
+                temp[3] = flight.depAirport.ToString();
+                temp[4] = flight.depTime.ToString();
+                temp[5] = flight.arrAirport.ToString();
+                temp[6] = flight.arrTime.ToString();
+                temp.AcceptChanges();
+            }
 
 
             statusTable.AcceptChanges();
