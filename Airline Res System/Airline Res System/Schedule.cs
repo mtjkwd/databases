@@ -31,6 +31,7 @@ namespace Airline_Res_System
             Schedule_PassEmail.Enabled = true;
             Schedule_Fname.Enabled = true;
             Schedule_Lname.Enabled = true;
+            Schedule_Cheapest.Enabled = true;
         }
 
         private void Schedule_Close_Click(object sender, EventArgs e)
