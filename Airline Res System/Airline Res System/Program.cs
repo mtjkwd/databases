@@ -315,8 +315,8 @@ namespace Airline_Res_System
         public void addPassenger(string email, string fname, string lname)
         {
             // Function for adding a Passenger to the database, will ignore duplicate emails automatically //
-            string cmdText = "INSERT IGNORE INTO passenger (Email, Fname, Lname) VALUES ('" + email + "', '" +
-                fname + "', '" + lname + "');";
+            string cmdText = "INSERT INTO passenger (Email, Fname, Lname) VALUES ('" + email + "', '" +
+                fname + "', '" + lname + "') ON DUPLICATE KEY UPDATE Fname = '" + fname + "', Lname = '" + lname + "';";
             MySqlCommand cmd = new MySqlCommand(cmdText, sqlConn);
             cmd.ExecuteNonQuery();
             return;
